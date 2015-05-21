@@ -1,0 +1,9 @@
+<div style="text-align: center">
+  <h3><%= current_user.name %>'s page</h3>
+  E-mail: <%= current_user.email %>
+  <br>
+  Registered: <%= current_user.created_at.strftime('%d-%b-%Y') %>
+  <div>
+    <%= link_to 'Home', root_path %>
+  </div>
+</div>
