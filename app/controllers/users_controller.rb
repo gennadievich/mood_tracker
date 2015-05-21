@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    begin
+      @user = User.find(params[:id])
+    rescue
+      redirect_to user_path(current_user)
+    end
   end
 
   def new
