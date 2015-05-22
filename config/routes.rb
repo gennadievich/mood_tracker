@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  post  '/mood/create/:status' => 'moods#create', as: 'new_mood'
+
   get   '/logout' => 'sessions#destroy', as: 'logout'
   get   '/login'  => 'sessions#index',   as: 'login'
   post  '/login'  => 'sessions#create'

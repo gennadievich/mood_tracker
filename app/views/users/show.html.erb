@@ -3,6 +3,15 @@
   E-mail: <%= @user.email %>
   <br>
   Registered: <%= @user.created_at.strftime('%d-%b-%Y') %>
+
+
+  <h4>How are you, <%= current_user.name %>?</h4>
+  <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
+  <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
+  <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+
+
+  <br><br><br>
   <div>
     <%= link_to 'Home', root_path %>
   </div>
