@@ -16,7 +16,7 @@
     <% @moods.each do |mood| %>
 
         <div>
-            <%= mood.user.name %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
+            <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
         </div>
     <% end %>
   </div>

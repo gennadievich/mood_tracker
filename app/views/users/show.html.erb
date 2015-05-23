@@ -5,10 +5,13 @@
   Registered: <%= @user.created_at.strftime('%d-%b-%Y') %>
 
 
-  <h4>How are you, <%= current_user.name %>?</h4>
-  <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
-  <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
-  <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+  <% if current_user %>
+    <h4>How are you, <%= current_user.name %>?</h4>
+    <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
+    <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
+    <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+  <% end %>
+
 
 
   <br><br><br>
