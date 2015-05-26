@@ -3,13 +3,18 @@
   E-mail: <%= @user.email %>
   <br>
   Registered: <%= @user.created_at.strftime('%d-%b-%Y') %>
+  <br>
+  <br>
 
-
-  <% if current_user %>
-    <h4>How are you, <%= current_user.name %>?</h4>
-    <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
-    <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
-    <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+  <% unless @moods.empty? %>
+    Last user's moods
+    <div>
+        <% @moods.each do |mood| %>
+          <div>
+            <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
+          </div>
+        <% end %>
+    </div>
   <% end %>
 
 

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     begin
       @user = User.find(params[:id])
+      @moods = @user.moods.order('created_at desc').limit(10)
     rescue
       redirect_to user_path(current_user)
     end
