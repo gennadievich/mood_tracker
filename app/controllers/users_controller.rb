@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     @moods = @user.moods.order('created_at desc').limit(10)
-    @average_mood = MoodCalculator.average_mood(current_user.moods)
+    @average_mood = MoodCalculator.average_mood(@user.moods)
 
   end
 

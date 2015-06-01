@@ -1,39 +1,41 @@
-<div style="text-align: center">
-  <h3><%= @user.name %>'s page</h3>
-  E-mail: <%= @user.email %>
-  <br>
-  Registered: <%= @user.created_at.strftime('%d-%b-%Y') %>
-  <br>
-  <br>
+<div class="user_page">
 
-  <div>
-    <% if current_user %>
-        <h3>How are you, <%= link_to current_user.name, user_path(current_user) %>?</h3>
-        <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
-        <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
-        <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+  <div class="user_name">
+    <% unless current_user %>
+        <h2><%= @user.name %>'s page</h2>
     <% end %>
   </div>
 
-  <% unless @moods.empty? %>
-    Last user's moods
-    <div>
-        <% @moods.each do |mood| %>
-          <div>
-            <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
-          </div>
-        <% end %>
-    </div>
-  <% end %>
 
-  <div>
-    <h4>User's average mood</h4>
-    <%= MoodCalculator.weight_to_word(@average_mood) %>
+  <div class="how_are_you">
+    <% if current_user %>
+        <h2>How are you, <%= link_to current_user.name, user_path(current_user) %>?</h2>
+        <div class="variants">
+            <div class="bad"><%= link_to 'Bad',    new_mood_path(:bad),    method: :post%></div>
+            <div class="good"><%= link_to 'Good',   new_mood_path(:good),   method: :post %></div>
+            <div class="great"><%= link_to 'Great',  new_mood_path(:great),  method: :post %></div>
+        </div>
+    <% end %>
   </div>
 
-
-  <br><br><br>
-  <div>
-    <%= link_to 'Home', root_path %>
+  <div class="moods_list">
+    <% unless @moods.empty? %>
+        <h3>Last user's moods</h3>
+        <div>
+            <% @moods.each do |mood| %>
+            <div>
+                <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
+            </div>
+            <% end %>
+        </div>
+    <% end %>
   </div>
+
+  <div class="average_mood">
+    <h2>User's average mood</h2>
+    <h2>
+        <%= MoodCalculator.weight_to_word(@average_mood) %>
+    </h2>
+  </div>
+
 </div>
