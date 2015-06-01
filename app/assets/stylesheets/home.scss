@@ -1,3 +1,23 @@
 // Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home{
+  margin: 20px auto;
+  width: 1024px;
+  #last_moods{
+    margin-left: 55px;
+  }
+  .moods_list{
+    font-size: 22px;
+    margin-left: 55px;
+  }
+  .statistics{
+    #statistic{
+      margin-left: 55px;
+    }
+    .average_mood{
+      text-align: center;
+    }
+  }
+}

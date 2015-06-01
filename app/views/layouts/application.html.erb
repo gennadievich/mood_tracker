@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<div class="header">
+  <div class="logo">
+    <%= image_tag 'happynaria.jpg' %>
+  </div>
+
+  <div class="header-menu">
+    <% unless current_user %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Register', new_user_path %>
+    <% end %>
+
+    <% if current_user %>
+        <%= link_to "#{current_user.name}", user_path(current_user) %>
+        <%= link_to 'Logout', logout_path %>
+    <% end %>
+  </div>
+</div>
+
 <%= yield %>
 
 </body>

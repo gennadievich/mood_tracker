@@ -15,7 +15,7 @@ class MoodsController < ApplicationController
     if last_mood = current_user.moods.last
     difference = Time.now - last_mood.created_at
       if difference < 120
-        last_mood.delete
+        last_mood.destroy
       end
     end
   end

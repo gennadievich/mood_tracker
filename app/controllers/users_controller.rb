@@ -5,12 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    begin
-      @user = User.find(params[:id])
-      @moods = @user.moods.order('created_at desc').limit(10)
-    rescue
-      redirect_to user_path(current_user)
-    end
+
+    @user = User.find(params[:id])
+    @moods = @user.moods.order('created_at desc').limit(10)
+    @average_mood = MoodCalculator.average_mood(current_user.moods)
+
   end
 
   def new

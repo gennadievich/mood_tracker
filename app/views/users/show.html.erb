@@ -6,6 +6,15 @@
   <br>
   <br>
 
+  <div>
+    <% if current_user %>
+        <h3>How are you, <%= link_to current_user.name, user_path(current_user) %>?</h3>
+        <%= link_to 'Bad',    new_mood_path(:bad),    method: :post%>
+        <%= link_to 'Good',   new_mood_path(:good),   method: :post %>
+        <%= link_to 'Great',  new_mood_path(:great),  method: :post %>
+    <% end %>
+  </div>
+
   <% unless @moods.empty? %>
     Last user's moods
     <div>
@@ -17,6 +26,10 @@
     </div>
   <% end %>
 
+  <div>
+    <h4>User's average mood</h4>
+    <%= MoodCalculator.weight_to_word(@average_mood) %>
+  </div>
 
 
   <br><br><br>
