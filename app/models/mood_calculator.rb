@@ -1,11 +1,11 @@
 class MoodCalculator
   def self.weight_to_word(average_mood)
     if average_mood > 0
-      "Great"
+      "great"
     elsif average_mood < 0
-      "Bad"
+      "bad"
     else
-      "Good"
+      "good"
     end
   end
 

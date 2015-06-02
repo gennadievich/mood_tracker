@@ -1,14 +1,14 @@
 <div class="home">
 
   <div id="last_moods">
-    <h2>Last moods:</h2>
+    <h2>Последние настроения:</h2>
   </div>
 
   <div class="moods_list">
     <% @moods.each do |mood| %>
 
         <div>
-            <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
+           У <%= link_to "#{mood.user.name}", user_path(mood.user) %> было <%= t mood.status %> настроение <%= time_ago_in_words(mood.created_at) %> назад
         </div>
     <% end %>
   </div>
@@ -16,12 +16,12 @@
   <div class="statistics">
 
     <div id="statistic">
-      <h2>Statistics</h2>
+      <h2>Статистика</h2>
     </div>
 
     <div class="average_mood">
-      <h3>Average users' mood</h3>
-      <h2><%= MoodCalculator.weight_to_word(@average_mood) %></h2>
+      <h3>Среднее настроение пользователей</h3>
+      <h2><%= t(MoodCalculator.weight_to_word(@average_mood)) %></h2>
     </div>
   </div>
 

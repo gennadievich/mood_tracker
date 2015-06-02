@@ -9,22 +9,22 @@
 
   <div class="how_are_you">
     <% if current_user %>
-        <h2>How are you, <%= link_to current_user.name, user_path(current_user) %>?</h2>
+        <h2>Как настроение, <%= link_to current_user.name, user_path(current_user) %>?</h2>
         <div class="variants">
-            <div class="bad"><%= link_to 'Bad',    new_mood_path(:bad),    method: :post%></div>
-            <div class="good"><%= link_to 'Good',   new_mood_path(:good),   method: :post %></div>
-            <div class="great"><%= link_to 'Great',  new_mood_path(:great),  method: :post %></div>
+            <div class="bad"><%= link_to 'Плохое',    new_mood_path(:bad),    method: :post%></div>
+            <div class="good"><%= link_to 'Хорошее',   new_mood_path(:good),   method: :post %></div>
+            <div class="great"><%= link_to 'Отличное',  new_mood_path(:great),  method: :post %></div>
         </div>
     <% end %>
   </div>
 
   <div class="moods_list">
     <% unless @moods.empty? %>
-        <h3>Last user's moods</h3>
+        <h3>Последние настроения</h3>
         <div>
             <% @moods.each do |mood| %>
             <div>
-                <%= link_to "#{mood.user.name}", user_path(mood.user) %>'s mood was <%= mood.status %> <%= time_ago_in_words(mood.created_at) %> ago
+              У <%= link_to "#{mood.user.name}", user_path(mood.user) %> было <%= t mood.status %> настроение <%= time_ago_in_words(mood.created_at) %> назад
             </div>
             <% end %>
         </div>
@@ -32,9 +32,9 @@
   </div>
 
   <div class="average_mood">
-    <h2>User's average mood</h2>
+    <h2>Среднее настроение</h2>
     <h2>
-        <%= MoodCalculator.weight_to_word(@average_mood) %>
+        <%= t MoodCalculator.weight_to_word(@average_mood) %>
     </h2>
   </div>
 
