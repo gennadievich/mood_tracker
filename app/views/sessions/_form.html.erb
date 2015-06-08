@@ -1,16 +1,16 @@
 <%= form_tag login_path do %>
     <div>
-      <%= label_tag :email %>
-      <%= email_field_tag :email %>
+      <%= label_tag 'Электронная почта', nil, class: 'label_tag' %>
+      <%= email_field_tag :email, nil, class: 'email_field' %>
     </div>
 
     <div>
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
+      <%= label_tag 'Пароль', nil, class: 'label_tag' %>
+      <%= password_field_tag :password, nil, class: 'password_field' %>
     </div>
 
     <div>
-      <%= submit_tag 'Log In' %>
+      <%= submit_tag 'Вперёд!', class: 'login_button' %>
     </div>
 
 <% end %>

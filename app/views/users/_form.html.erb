@@ -1,35 +1,27 @@
 <%= form_for @user do |f| %>
 
     <div>
-      <%= f.label :email %>
-    </div>
-    <div>
-      <%= f.email_field :email %>
+      <%= f.label 'Электронная почта',nil, class: 'label_tag' %>
+      <%= f.email_field :email, class: 'email_field' %>
     </div>
 
     <div>
-      <%= f.label :name %>
-    </div>
-    <div>
-      <%= f.text_field :name %>
+      <%= f.label 'Имя',nil, class: 'label_tag' %>
+      <%= f.text_field :name, class: 'name_field' %>
     </div>
 
     <div>
-      <%= f.label :password %>
-    </div>
-    <div>
-      <%= f.password_field :password%>
+      <%= f.label 'Пароль',nil, class: 'label_tag' %>
+      <%= f.password_field :password, class: 'password_field'%>
     </div>
 
     <div>
-      <%= f.label :password_confirmation %>
-    </div>
-    <div>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label 'Повторите пароль',nil, class: 'label_tag' %>
+      <%= f.password_field :password_confirmation, class: 'confirm_password_field' %>
     </div>
 
     <div>
-      <%= f.submit 'Sign Up' %>
+      <%= f.submit 'Зарегистрироваться!', class: 'register_button' %>
     </div>
 
 <% end %>

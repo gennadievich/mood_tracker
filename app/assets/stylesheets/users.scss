@@ -64,3 +64,64 @@
   }
 }
 
+.user_form{
+  width: 1024px;
+  margin: 40px auto;
+  font-family: Arial;
+  font-size: 20px;
+
+  #reg{
+    text-align: center;
+  }
+
+  .label_tag{
+    margin-left: 300px;
+  }
+
+  .email_field{
+    border: solid darkblue 1px;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .name_field{
+    border: solid darkblue 1px;
+    border-radius: 5px;
+    margin-left: 161px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .password_field{
+    border: solid darkblue 1px;
+    border-radius: 5px;
+    margin-left: 130px;
+    font-size: 18px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+  }
+
+  .confirm_password_field{
+    border: solid darkblue 1px;
+    border-radius: 5px;
+    margin-left: 29px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .register_button{
+    font-size: 18px;
+    margin-top: 15px;
+    height: 30px;
+    width: 200px;
+    margin-left: 40%;
+    border-radius: 5px;
+  }
+}
+
+
