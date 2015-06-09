@@ -11,16 +11,16 @@
     <% if current_user %>
         <h2>Как настроение, <%= link_to current_user.name, user_path(current_user) %>?</h2>
         <div class="variants">
-            <div class="bad"><%= link_to 'Плохое',    new_mood_path(:bad),    method: :post%></div>
-            <div class="good"><%= link_to 'Хорошее',   new_mood_path(:good),   method: :post %></div>
-            <div class="great"><%= link_to 'Отличное',  new_mood_path(:great),  method: :post %></div>
+            <%= link_to 'Плохое',    new_mood_path(:bad),    method: :post, class: "bad" %>
+            <%= link_to 'Хорошее',   new_mood_path(:good),   method: :post, class: "good" %>
+            <%= link_to 'Отличное',  new_mood_path(:great),  method: :post, class: "great" %>
         </div>
     <% end %>
   </div>
 
   <div class="moods_list">
     <% unless @moods.empty? %>
-        <h3>Последние настроения</h3>
+        <div style="font-weight: bold; margin-top: 10px; margin-bottom: 10px; margin-left: -30px;">Последние настроения</div>
         <div>
             <% @moods.each do |mood| %>
             <div>
