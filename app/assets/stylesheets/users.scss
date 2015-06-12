@@ -2,6 +2,21 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
 .user_page{
   width: 1024px;
   margin: auto;
@@ -75,45 +90,68 @@
     text-align: center;
   }
 
-  .label_tag{
-    margin-left: 300px;
+  .label_area{
+    width: 512px;
+    float: left;
+
+    .email_label_tag{
+      float: right;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    .name_label_tag{
+      margin-right: 10px;
+      float: right;
+      margin-top: 5px;
+      clear: both;
+    }
+    .password_label_tag{
+      float: right;
+      margin-top: 5px;
+      margin-right: 10px;
+      clear: both;
+    }
+    .confirm_password_label_tag{
+      float: right;
+      clear: both;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
   }
 
-  .email_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 20px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding-left: 5px;
+  .data_area{
+    width: 512px;
+    float: left;
+
+    .email_data_field{
+      margin-left: 10px;
+      font-size: 16px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .name_data_field{
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 5px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .password_data_field{
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 5px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .confirm_password_data_field{
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 5px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
   }
 
-  .name_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 161px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding-left: 5px;
-  }
-
-  .password_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 130px;
-    font-size: 18px;
-    padding-left: 5px;
-    margin-bottom: 5px;
-  }
-
-  .confirm_password_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 29px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding-left: 5px;
-  }
 
   .register_button{
     font-size: 18px;

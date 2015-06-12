@@ -6,32 +6,46 @@
 .login_form{
   width: 1024px;
   margin: 40px auto;
-  font-family: Arial;
   font-size: 20px;
 
   #enter{
     text-align: center;
   }
 
-  .label_tag{
-    margin-left: 300px;
+  .label_area{
+    width: 512px;
+    float: left;
+
+    .email_label_tag{
+      float: right;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    .password_label_tag{
+      float: right;
+      margin-right: 10px;
+      margin-top: 5px;
+      clear: both;
+    }
   }
 
-  .email_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 20px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding-left: 5px;
-  }
+  .data_area{
+    width: 512px;
+    float: left;
 
-  .password_field{
-    border: solid darkblue 1px;
-    border-radius: 5px;
-    margin-left: 130px;
-    font-size: 18px;
-    padding-left: 5px;
+    .email_data_field{
+      margin-left: 10px;
+      font-size: 16px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .password_data_field{
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 5px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
   }
 
   .login_button{

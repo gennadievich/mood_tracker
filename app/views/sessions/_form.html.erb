@@ -1,12 +1,15 @@
 <%= form_tag login_path do %>
-    <div>
-      <%= label_tag 'Электронная почта', nil, class: 'label_tag' %>
-      <%= email_field_tag :email, nil, class: 'email_field' %>
+
+    <div class="label_area">
+      <%= label_tag 'Электронная почта', nil, class: 'email_label_tag' %>
+      <br>
+      <%= label_tag 'Пароль', nil, class: 'password_label_tag' %>
     </div>
 
-    <div>
-      <%= label_tag 'Пароль', nil, class: 'label_tag' %>
-      <%= password_field_tag :password, nil, class: 'password_field' %>
+    <div class="data_area">
+      <%= email_field_tag :email, nil, class: 'email_data_field' %>
+      <br>
+      <%= password_field_tag :password, nil, class: 'password_data_field' %>
     </div>
 
     <div>

@@ -1,23 +1,23 @@
 <%= form_for @user do |f| %>
 
-    <div>
-      <%= f.label 'Электронная почта',nil, class: 'label_tag' %>
-      <%= f.email_field :email, class: 'email_field' %>
+    <div class="label_area">
+      <%= f.label 'Электронная почта',nil, class: 'email_label_tag' %>
+      <br>
+      <%= f.label 'Имя',nil, class: 'name_label_tag' %>
+      <br>
+      <%= f.label 'Пароль',nil, class: 'password_label_tag' %>
+      <br>
+      <%= f.label 'Повторите пароль',nil, class: 'confirm_password_label_tag' %>
     </div>
 
-    <div>
-      <%= f.label 'Имя',nil, class: 'label_tag' %>
-      <%= f.text_field :name, class: 'name_field' %>
-    </div>
-
-    <div>
-      <%= f.label 'Пароль',nil, class: 'label_tag' %>
-      <%= f.password_field :password, class: 'password_field'%>
-    </div>
-
-    <div>
-      <%= f.label 'Повторите пароль',nil, class: 'label_tag' %>
-      <%= f.password_field :password_confirmation, class: 'confirm_password_field' %>
+    <div class="data_area">
+      <%= f.email_field :email, class: 'email_data_field' %>
+      <br>
+      <%= f.text_field :name, class: 'name_data_field' %>
+      <br>
+      <%= f.password_field :password, class: 'password_data_field'%>
+      <br>
+      <%= f.password_field :password_confirmation, class: 'confirm_password_data_field' %>
     </div>
 
     <div>
