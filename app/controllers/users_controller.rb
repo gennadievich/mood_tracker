@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user)
+      Mailer.registered(@user).deliver
       redirect_to user_path(@user)
     else
       render :new

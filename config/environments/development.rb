@@ -16,6 +16,22 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # gmail mailer.for.my.apps@gmail.com supermailer
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port:    587,
+      domain:  "localhost.localdomain",
+      authentication: "plain",
+      user_name: "mailer.for.my.apps",
+      password:  "supermailer",
+      enable_starttls_auto: true
+  }
+
+  config.active_job.queue_adapter = :delayed_job
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
